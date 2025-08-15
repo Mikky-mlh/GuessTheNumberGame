@@ -1,17 +1,14 @@
 import tkinter as tk
 import random
 
-# --- Main Application Window Setup ---
-# Create the main window
 window = tk.Tk()
 window.title("Guess the Number")
 window.geometry("400x300")
-window.config(bg="#f0f0f0") # Set a light gray background color
+window.config(bg="#f0f0f0") 
 
 # --- Game Variables ---
 # Generate a random number between 1 and 100
 target_number = random.randint(1, 100)
-# A counter to track the number of guesses
 guess_count = 0
 
 def check_guess():
@@ -43,7 +40,7 @@ def check_guess():
             restart_button.pack(pady=10) # Show the restart button
 
     except ValueError:
-        # Handle non-integer input gracefully
+        # Handle non-integer input
         message_label.config(text="Invalid input. Please enter a whole number.", fg="red")
     
     # Clear the input field after each guess
@@ -129,4 +126,5 @@ guess_input.focus()
 
 # Run the main event loop
 window.mainloop()
+
 
