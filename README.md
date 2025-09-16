@@ -1,0 +1,1 @@
+This is my first mini project in python. I have used tkinter for the GUI and randint for the UI. The code and .exe file both are attached for you to play, study and suggest changes. Give me feedback if possible😁
