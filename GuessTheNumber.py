@@ -6,16 +6,10 @@ window.title("Guess the Number")
 window.geometry("400x300")
 window.config(bg="#f0f0f0") 
 
-# --- Game Variables ---
-# Generate a random number between 1 and 100
 target_number = random.randint(1, 100)
 guess_count = 0
 
-def check_guess():
-    """
-    Function to check the user's guess against the target number.
-    This function is called when the 'Guess' button is clicked.
-    """
+def check_guess():
     global guess_count
 
     try:
@@ -28,14 +22,12 @@ def check_guess():
             message_label.config(text="Please enter a number between 1 and 100.", fg="red")
             return
 
-        # Compare the guess to the target number
         if guess < target_number:
             message_label.config(text="Too low! Try again.", fg="orange")
         elif guess > target_number:
             message_label.config(text="Too high! Try again.", fg="orange")
         else:
-            # Correct guess, display a success message and disable the game
-            message_label.config(text=f"Congratulations! You guessed the number in {guess_count} guesses!", fg="green")
+    message_label.config(text=f"Congratulations! You guessed the number in {guess_count} guesses!", fg="green")
             guess_button.config(state=tk.DISABLED)
             restart_button.pack(pady=10) # Show the restart button
 
@@ -64,7 +56,7 @@ def restart_game():
     restart_button.pack_forget() # Hide the restart button
     guess_input.focus() # Set focus to the input field
 
-# --- UI Elements ---
+
 # Frame to center the content
 main_frame = tk.Frame(window, bg="#f0f0f0", padx=20, pady=20)
 main_frame.pack(expand=True)
